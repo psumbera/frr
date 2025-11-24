@@ -51,7 +51,7 @@ struct bfd_dplane_ctx {
 		struct sockaddr sa;
 		struct sockaddr_in sin;
 		struct sockaddr_in6 sin6;
-		struct sockaddr_un sun;
+		struct sockaddr_un un;
 	} addr;
 	/** Address length. */
 	socklen_t addrlen;

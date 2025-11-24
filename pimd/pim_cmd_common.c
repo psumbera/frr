@@ -7,6 +7,7 @@
 
 #include <zebra.h>
 #include <sys/ioctl.h>
+#include <sys/sockio.h>
 
 #include "lib/json.h"
 #include "command.h"

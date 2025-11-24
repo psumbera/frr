@@ -678,16 +678,16 @@ static ssize_t printfrr_psu(struct fbuf *buf, struct printfrr_eargs *ea,
 	case AF_UNIX: {
 		int len;
 #ifdef __linux__
-		if (su->sun.sun_path[0] == '\0' && su->sun.sun_path[1]) {
-			len = strnlen(su->sun.sun_path + 1,
-				      sizeof(su->sun.sun_path) - 1);
+		if (su->un.sun_path[0] == '\0' && su->un.sun_path[1]) {
+			len = strnlen(su->un.sun_path + 1,
+				      sizeof(su->un.sun_path) - 1);
 			ret += bprintfrr(buf, "@%*pSE", len,
-					 su->sun.sun_path + 1);
+					 su->un.sun_path + 1);
 			break;
 		}
 #endif
-		len = strnlen(su->sun.sun_path, sizeof(su->sun.sun_path));
-		ret += bprintfrr(buf, "%*pSE", len, su->sun.sun_path);
+		len = strnlen(su->un.sun_path, sizeof(su->un.sun_path));
+		ret += bprintfrr(buf, "%*pSE", len, su->un.sun_path);
 		break;
 	}
 	default:

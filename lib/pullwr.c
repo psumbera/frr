@@ -256,7 +256,12 @@ void pullwr_stats(struct pullwr *pullwr, uint64_t *total_written,
 	*total_written = pullwr->total_written;
 	*pending = pullwr->valid;
 
+#if defined(TIOCOUTQ)
 	if (ioctl(pullwr->fd, TIOCOUTQ, &tmp) != 0)
 		tmp = 0;
+#else
+	// TIOCOUTQ not available (e.g., on Solaris): fallback or set to 0
+	tmp = 0;
+#endif
 	*kernel_pending = tmp;
 }

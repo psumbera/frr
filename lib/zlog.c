@@ -54,6 +54,30 @@
 #include "libfrr_trace.h"
 #include "frrevent.h"
 
+#if defined(__sun__)
+// Portable calculation for time zone offset (in seconds)
+static long get_gmtoff(const struct tm *tm) {
+    time_t t_local, t_gmt;
+    struct tm tm_copy;
+    char *tz;
+    long off;
+    tm_copy = *tm; // Copy to modify if needed
+    t_local = mktime(&tm_copy);
+    tm_copy = *tm;
+    tz = getenv("TZ");
+    setenv("TZ", "UTC", 1);
+    tzset();
+    t_gmt = mktime(&tm_copy);
+    if (tz)
+        setenv("TZ", tz, 1);
+    else
+        unsetenv("TZ");
+    tzset();
+    off = (long)difftime(t_local, t_gmt);
+    return off;
+}
+#endif
+
 DEFINE_MTYPE_STATIC(LIB, LOG_MESSAGE,  "log message");
 DEFINE_MTYPE_STATIC(LIB, LOG_TLSBUF,   "log thread-local buffer");
 
@@ -912,11 +936,19 @@ size_t zlog_msg_ts(struct zlog_msg *msg, struct fbuf *out, uint32_t flags)
 		if (flags & ZLOG_TS_UTC) {
 			msg->ts_zonetail[0] = 'Z';
 			msg->ts_zonetail[1] = '\0';
-		} else
+		} else {
+#if defined(__sun)
+			long gmtoff = get_gmtoff(&tm);
+			snprintfrr(msg->ts_zonetail, sizeof(msg->ts_zonetail),
+				   "%+03ld:%02ld",
+				   gmtoff / 3600, (labs(gmtoff) / 60) % 60);
+#else
 			snprintfrr(msg->ts_zonetail, sizeof(msg->ts_zonetail),
 				   "%+03d:%02d",
 				   (int)(tm.tm_gmtoff / 3600),
 				   (int)(labs(tm.tm_gmtoff) / 60) % 60);
+#endif
+		}
 
 		msg->ts_dot = msg->ts_str + strlen(msg->ts_str);
 		snprintfrr(msg->ts_dot,

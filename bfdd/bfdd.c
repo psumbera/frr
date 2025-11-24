@@ -208,7 +208,7 @@ distributed_bfd_init(const char *arg)
 	union {
 		struct sockaddr_in sin;
 		struct sockaddr_in6 sin6;
-		struct sockaddr_un sun;
+		struct sockaddr_un un;
 	} sa;
 
 	/* Basic parsing: find ':' to figure out type part and address part. */
@@ -236,9 +236,9 @@ distributed_bfd_init(const char *arg)
 		if (strcmp(type, "unixc") == 0)
 			is_client = true;
 
-		salen = sizeof(sa.sun);
-		sa.sun.sun_family = AF_UNIX;
-		strlcpy(sa.sun.sun_path, addr, sizeof(sa.sun.sun_path));
+		salen = sizeof(sa.un);
+		sa.un.sun_family = AF_UNIX;
+		strlcpy(sa.un.sun_path, addr, sizeof(sa.un.sun_path));
 	} else if (strcmp(type, "ipv4") == 0 || strcmp(type, "ipv4c") == 0) {
 		if (strcmp(type, "ipv4c") == 0)
 			is_client = true;

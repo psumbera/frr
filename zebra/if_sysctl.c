@@ -8,7 +8,7 @@
 
 #include <net/route.h>
 
-#if !defined(GNU_LINUX) && !defined(OPEN_BSD)
+#if !defined(GNU_LINUX) && !defined(OPEN_BSD) && !defined(SUNOS_5)
 
 #include <sys/sysctl.h>
 

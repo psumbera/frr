@@ -1164,13 +1164,6 @@ fi
 dnl -------------------------
 dnl Check other header files.
 dnl -------------------------
-AC_CHECK_HEADERS([ \
-	asm/types.h sys/endian.h])
-
-AC_CHECK_HEADER([endian.h], [], [
-  AC_MSG_ERROR([missing endian.h])
-])
-
 AC_CHECK_LIB([atomic], [main], [LIBS="$LIBS -latomic"], [], [])
 
 AC_CHECK_HEADER([stdatomic.h],[
@@ -1334,7 +1327,10 @@ is_linux=false
 AC_MSG_CHECKING([which operating system interface to use])
 case "$host_os" in
   sunos* | solaris2*)
-    AC_MSG_FAILURE([Solaris support has been removed please see versions prior or equal to 7.5])
+    AC_MSG_RESULT([Solaris])
+
+    AC_DEFINE([SUNOS_5], [1], [Solaris])
+    AC_DEFINE([SOLARIS_IPV6], [1], Solaris IPv6)
     ;;
   linux*)
     AC_MSG_RESULT([Linux])

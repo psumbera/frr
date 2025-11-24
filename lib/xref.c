@@ -21,6 +21,18 @@
 #include "memory.h"
 #include "hash.h"
 
+#ifdef __sun__
+void *portable_memrchr(const void *s, int c, size_t n) {
+    const unsigned char *cp = (const unsigned char *)s + n;
+    while (cp != (const unsigned char *)s) {
+        if (*(--cp) == (unsigned char)c)
+            return (void *)cp;
+    }
+    return NULL;
+}
+#define memrchr portable_memrchr
+#endif
+
 struct xref_block *xref_blocks;
 static struct xref_block **xref_block_last = &xref_blocks;
 

@@ -173,7 +173,16 @@ static long __timezone_offset(void)
 
 	time(&now);
 	tm_now = localtime(&now);
+#if defined(__sun__)
+	struct tm gm_tm;
+	gmtime_r(&now, &gm_tm);
+	gm_tm.tm_isdst = tm_now->tm_isdst;
+	time_t local_time = mktime(tm_now);
+	time_t gm_time = mktime(&gm_tm);
+	return (long)difftime(local_time, gm_time);
+#else
 	return tm_now->tm_gmtoff;
+#endif
 }
 
 static int __lifetime_set(struct vty *vty, char timebuf[32],

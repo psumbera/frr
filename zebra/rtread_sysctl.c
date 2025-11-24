@@ -8,7 +8,7 @@
 
 #include <net/route.h>
 
-#if !defined(GNU_LINUX)
+#if !defined(GNU_LINUX) && !defined(SUNOS_5)
 
 #include <sys/sysctl.h>
 
@@ -111,4 +111,4 @@ void vlan_read(struct zebra_ns *zns)
 {
 }
 
-#endif /* !defined(GNU_LINUX) */
+#endif /* !defined(GNU_LINUX) && !defined(SUNOS_5) */

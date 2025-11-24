@@ -22,6 +22,10 @@
 
 #if PIM_IPV == 4
 
+#ifdef __sun__
+#include <sys/sockio.h>
+#endif
+
 #include <netinet/in.h>
 #if defined(HAVE_LINUX_MROUTE_H)
 #include <linux/mroute.h>

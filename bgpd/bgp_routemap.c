@@ -2294,10 +2294,12 @@ route_set_l3vpn_nexthop_encapsulation(void *rule, const struct prefix *prefix,
 
 	path = object;
 
+#ifdef IPPROTO_GRE /* Solaris doesn't define IPPROTO_GRE */
 	if (rins->protocol != IPPROTO_GRE)
 		return RMAP_OKAY;
 
 	SET_FLAG(path->attr->rmap_change_flags, BATTR_RMAP_L3VPN_ACCEPT_GRE);
+#endif
 	return RMAP_OKAY;
 }
 
@@ -2310,7 +2312,9 @@ static void *route_set_l3vpn_nexthop_encapsulation_compile(const char *arg)
 		       sizeof(struct rmap_l3vpn_nexthop_encapsulation_set));
 
 	/* XXX ALL GRE modes are accepted for now: gre or ip6gre */
+#ifdef IPPROTO_GRE
 	rins->protocol = IPPROTO_GRE;
+#endif
 
 	return rins;
 }

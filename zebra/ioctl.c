@@ -7,7 +7,7 @@
 #include <zebra.h>
 
 #include <sys/ioctl.h>
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__sun__)
 #include <netinet6/in6_var.h>
 #endif
 
@@ -25,6 +25,8 @@
 #include "zebra/interface.h"
 #include "zebra/zebra_errors.h"
 #include "zebra/debug.h"
+
+#if !defined(SUNOS_5)
 
 #ifdef HAVE_BSD_LINK_DETECT
 #include <net/if_media.h>
@@ -154,7 +156,11 @@ void if_get_mtu(struct interface *ifp)
 		return;
 	}
 
+#if defined(SUNOS_5)
+	ifp->mtu6 = ifp->mtu = ifreq.ifr_metric;
+#else
 	ifp->mtu6 = ifp->mtu = ifreq.ifr_mtu;
+#endif
 
 	/* propogate */
 	zebra_interface_up_update(ifp);
@@ -253,7 +259,11 @@ static int if_set_prefix_ctx(const struct zebra_dplane_ctx *ctx)
 #ifdef HAVE_STRUCT_SOCKADDR_IN_SIN_LEN
 	mask.sin_len = sizeof(struct sockaddr_in);
 #endif
+#if defined(SUNOS_5)
+	memcpy(&mask, &addreq.ifra_mask, sizeof(mask));
+#else
 	memcpy(&addreq.ifra_mask, &mask, sizeof(struct sockaddr_in));
+#endif
 
 	ret = if_ioctl(SIOCAIFADDR, (caddr_t)&addreq);
 	if (ret < 0)
@@ -615,3 +625,5 @@ static int if_unset_prefix6_ctx(const struct zebra_dplane_ctx *ctx)
 	return 0;
 }
 #endif /* LINUX_IPV6 */
+
+#endif /* !SUNOS_5 */

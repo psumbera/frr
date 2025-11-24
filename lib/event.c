@@ -10,6 +10,9 @@
 #include <signal.h>
 #include <sys/resource.h>
 #include <sys/stat.h>
+#ifdef __sun__
+#include <sys/loadavg.h>
+#endif
 
 #include "frrevent.h"
 #include "memory.h"

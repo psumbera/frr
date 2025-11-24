@@ -7,10 +7,14 @@
 #ifndef _ZEBRA_PREFIX_H
 #define _ZEBRA_PREFIX_H
 
+#ifdef __sun__
+#include <sys/ethernet.h>
+#else
 #ifdef __linux__
 #include <net/ethernet.h>
 #else
 #include <netinet/if_ether.h>
+#endif
 #endif
 #include "sockunion.h"
 #include "ipaddr.h"
@@ -377,7 +381,11 @@ static inline void ipv4_addr_copy(struct in_addr *dst,
 
 /* glibc defines s6_addr32 to __in6_u.__u6_addr32 if __USE_{MISC || GNU} */
 #ifndef s6_addr32
+#ifdef __sun__
+#define s6_addr32 _S6_un._S6_u32
+#else
 #define s6_addr32 __u6_addr.__u6_addr32
+#endif
 #endif /*s6_addr32*/
 
 /* Prototypes. */

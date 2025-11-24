@@ -422,22 +422,32 @@ int main(int argc, char **argv)
 		sizeof(config->tcp_authentication_str));
 
 	int af = (g_cmd_line_args->is_ipv6 ? AF_INET6 : AF_INET);
-	struct hostent *host_info =
-		gethostbyname2(g_cmd_line_args->dest_ip_str, af);
-	if (host_info == NULL) {
-		pcep_log(LOG_ERR, "%s: Error getting IP address.", __func__);
+
+	struct addrinfo hints, *res = NULL;
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = af;
+	hints.ai_socktype = SOCK_STREAM;
+
+	int gai_ret = getaddrinfo(g_cmd_line_args->dest_ip_str, NULL, &hints, &res);
+	if (gai_ret != 0 || res == NULL) {
+		pcep_log(LOG_ERR, "%s: Error getting IP address: %s", __func__,
+			gai_strerror(gai_ret));
 		return -1;
 	}
 
 	if (g_cmd_line_args->is_ipv6) {
 		struct in6_addr host_address;
-		memcpy(&host_address, host_info->h_addr, host_info->h_length);
+		struct sockaddr_in6 *sin6 = (struct sockaddr_in6 *)res->ai_addr;
+		memcpy(&host_address, &sin6->sin6_addr, sizeof(host_address));
 		g_session = connect_pce_ipv6(config, &host_address);
 	} else {
 		struct in_addr host_address;
-		memcpy(&host_address, host_info->h_addr, host_info->h_length);
+		struct sockaddr_in *sin = (struct sockaddr_in *)res->ai_addr;
+		memcpy(&host_address, &sin->sin_addr, sizeof(host_address));
 		g_session = connect_pce(config, &host_address);
 	}
+
+	freeaddrinfo(res);
 
 	if (g_session == NULL) {
 		pcep_log(LOG_WARNING, "%s: Error in connect_pce.", __func__);

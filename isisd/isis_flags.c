@@ -8,6 +8,8 @@
  *                           Institute of Communications Engineering
  */
 
+#include <strings.h>
+
 #include <zebra.h>
 #include "log.h"
 #include "linklist.h"

@@ -36,6 +36,12 @@
 
 #include "privs.h"
 
+#ifdef __sun__
+#include <sys/filio.h> /* for FIONREAD */
+#define ETHER_HDR_LEN 14
+#define ETHER_ADDR_LEN ETHERADDRL
+#endif
+
 struct bpf_insn llcfilter[] = {
 	BPF_STMT(BPF_LD + BPF_B + BPF_ABS,
 		 ETHER_HDR_LEN), /* check first byte */
@@ -270,10 +276,10 @@ int isis_send_pdu_bcast(struct isis_circuit *circuit, int level)
 	 */
 	eth = (struct ether_header *)sock_buff;
 	if (level == 1)
-		memcpy(eth->ether_dhost, ALL_L1_ISS, ETH_ALEN);
+		memcpy(eth->ether_dhost.ether_addr_octet, ALL_L1_ISS, ETH_ALEN);
 	else
-		memcpy(eth->ether_dhost, ALL_L2_ISS, ETH_ALEN);
-	memcpy(eth->ether_shost, circuit->u.bc.snpa, ETH_ALEN);
+		memcpy(eth->ether_dhost.ether_addr_octet, ALL_L2_ISS, ETH_ALEN);
+	memcpy(eth->ether_shost.ether_addr_octet, circuit->u.bc.snpa, ETH_ALEN);
 	size_t frame_size = stream_get_endp(circuit->snd_stream) + LLC_LEN;
 	eth->ether_type = htons(isis_ethertype(frame_size));
 

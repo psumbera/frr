@@ -14953,6 +14953,12 @@ static const char *table_stats_strs[][2] = {
 	[BGP_STATS_MAX] = {NULL, NULL}
 };
 
+/* Avoid: error: braced-group within expression allowed only inside a function */
+#ifdef __sun__
+#undef MAX
+#define MAX(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+
 struct bgp_table_stats {
 	struct bgp_table *table;
 	unsigned long long counts[BGP_STATS_MAX];

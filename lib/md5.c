@@ -12,6 +12,8 @@
  * All rights reserved.
  */
 
+#include <strings.h>
+
 #include <zebra.h>
 #include "md5.h"
 

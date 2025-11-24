@@ -6,6 +6,7 @@
 #include <zebra.h>
 
 #include <fcntl.h>
+#include <errno.h>
 #include <signal.h>
 #include <sys/stat.h>
 #include <sys/un.h>
@@ -353,10 +354,23 @@ static void vtysh_flock_config(const char *flock_file)
 		return;
 	}
 
+#if defined(__sun__)
+	struct flock fl = {0};
+	fl.l_type = F_WRLCK;
+	fl.l_whence = SEEK_SET;
+	fl.l_start = 0;
+	fl.l_len = 0; // entire file
+
+	while (count < 400 && (fcntl(flock_fd, F_SETLK, &fl) < 0)) {
+		count++;
+		usleep(500000);
+	}
+#else
 	while (count < 400 && (flock(flock_fd, LOCK_EX | LOCK_NB) < 0)) {
 		count++;
 		usleep(500000);
 	}
+#endif
 
 	if (count >= 400)
 		fprintf(stderr,
@@ -366,7 +380,16 @@ static void vtysh_flock_config(const char *flock_file)
 
 static void vtysh_unflock_config(void)
 {
+#if defined(__sun)
+	struct flock fl = {0};
+	fl.l_type = F_UNLCK;
+	fl.l_whence = SEEK_SET;
+	fl.l_start = 0;
+	fl.l_len = 0; // entire file
+	fcntl(flock_fd, F_SETLK, &fl);
+#else
 	flock(flock_fd, LOCK_UN);
+#endif
 	close(flock_fd);
 }
 

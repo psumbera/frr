@@ -35,7 +35,7 @@ static char *notify_socket;
 static void systemd_send_information(const char *info)
 {
 	int sock;
-	struct sockaddr_un sun;
+	struct sockaddr_un un;
 
 	if (!notify_socket)
 		return;
@@ -44,16 +44,16 @@ static void systemd_send_information(const char *info)
 	if (sock < 0)
 		return;
 
-	sun.sun_family = AF_UNIX;
-	strlcpy(sun.sun_path, notify_socket, sizeof(sun.sun_path));
+	un.sun_family = AF_UNIX;
+	strlcpy(un.sun_path, notify_socket, sizeof(un.sun_path));
 
 	/* linux abstract unix socket namespace */
-	if (sun.sun_path[0] == '@')
-		sun.sun_path[0] = '\0';
+	if (un.sun_path[0] == '@')
+		un.sun_path[0] = '\0';
 
 	/* nothing we can do if this errors out... */
-	(void)sendto(sock, info, strlen(info), 0, (struct sockaddr *)&sun,
-		     sizeof(sun));
+	(void)sendto(sock, info, strlen(info), 0, (struct sockaddr *)&un,
+		     sizeof(un));
 
 	close(sock);
 }

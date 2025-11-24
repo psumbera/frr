@@ -25,7 +25,7 @@ union sockunion {
 	struct sockaddr sa;
 	struct sockaddr_in sin;
 	struct sockaddr_in6 sin6;
-	struct sockaddr_un sun;
+	struct sockaddr_un un;
 #ifdef __OpenBSD__
 	struct sockaddr_mpls smpls;
 	struct sockaddr_rtlabel rtlabel;
@@ -42,7 +42,7 @@ union sockaddrptr {
 	uniontype(sockaddrptr, struct sockaddr, sa)
 	uniontype(sockaddrptr, struct sockaddr_in, sin)
 	uniontype(sockaddrptr, struct sockaddr_in6, sin6)
-	uniontype(sockaddrptr, struct sockaddr_un, sun)
+	uniontype(sockaddrptr, struct sockaddr_un, un)
 #ifdef __OpenBSD__
 	uniontype(sockaddrptr, struct sockaddr_mpls, smpls)
 	uniontype(sockaddrptr, struct sockaddr_rtlabel, rtlabel)
@@ -55,7 +55,7 @@ union sockaddrconstptr {
 	uniontype(sockaddrconstptr, const struct sockaddr, sa)
 	uniontype(sockaddrconstptr, const struct sockaddr_in, sin)
 	uniontype(sockaddrconstptr, const struct sockaddr_in6, sin6)
-	uniontype(sockaddrconstptr, const struct sockaddr_un, sun)
+	uniontype(sockaddrconstptr, const struct sockaddr_un, un)
 #ifdef __OpenBSD__
 	uniontype(sockaddrconstptr, const struct sockaddr_mpls, smpls)
 	uniontype(sockaddrconstptr, const struct sockaddr_rtlabel, rtlabel)
