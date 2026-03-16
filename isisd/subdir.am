@@ -12,6 +12,14 @@ endif
 man8 += $(MANBUILD)/frr-isisd.8
 endif
 
+if ISISD
+if SOLARIS
+#noinst_LIBRARIES += isisd/libtrill.a
+sbin_PROGRAMS += isisd/trilld
+vtysh_daemons += trilld
+endif
+endif
+
 if FABRICD
 noinst_LIBRARIES += isisd/libfabric.a
 sbin_PROGRAMS += isisd/fabricd
@@ -87,6 +95,7 @@ LIBISIS_SOURCES = \
 	isisd/isis_tx_queue.c \
 	isisd/isis_zebra.c \
 	isisd/isisd.c \
+	isisd/isis_trilldummy.c \
 	isisd/iso_checksum.c \
 	isisd/fabricd.c \
 	# end
@@ -99,6 +108,15 @@ ISIS_SOURCES = \
 	# end
 
 ISIS_LDADD_COMMON = lib/libfrr.la $(LIBCAP) $(LIBYANG_LIBS)
+
+TRILL_SOURCES = \
+	isisd/isis_main.c \
+	isisd/isis_vty_fabricd.c \
+	isisd/isis_trill.c \
+	isisd/isis_trillio.c \
+	isisd/isis_trillvlans.c \
+	isisd/isis_trillbpdu.c \
+	# end
 
 # Building isisd
 
@@ -125,6 +143,12 @@ isisd_isisd_snmp_la_SOURCES = isisd/isis_snmp.c
 isisd_isisd_snmp_la_CFLAGS = $(AM_CFLAGS) $(SNMP_CFLAGS) -std=gnu11
 isisd_isisd_snmp_la_LDFLAGS = $(MODULE_LDFLAGS)
 isisd_isisd_snmp_la_LIBADD = lib/libfrrsnmp.la
+
+# Building trilld
+
+isisd_trilld_LDADD = isisd/libisis.a $(ISIS_LDADD_COMMON) -ldladm
+isisd_trilld_SOURCES = $(TRILL_SOURCES)
+isisd_trilld_CPPFLAGS = $(FABRICD_CPPFLAGS)
 
 # Building fabricd
 

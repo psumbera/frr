@@ -71,6 +71,7 @@ extern struct zebra_privs_t isisd_privs;
 /* #define EXTREME_DEBUG  */
 
 struct fabricd;
+struct trill_info;
 
 struct isis_master {
 	/* ISIS instance. */
@@ -99,6 +100,7 @@ struct isis {
 	struct event *t_dync_clean; /* dynamic hostname cache cleanup thread */
 	uint32_t circuit_ids_used[8];     /* 256 bits to track circuit ids 1 through 255 */
 	int snmp_notifications;
+	bool trill_active;
 	struct list *dyn_cache;
 
 	struct route_table *ext_info[REDIST_PROTOCOL_COUNT];
@@ -129,6 +131,7 @@ enum isis_metric_style {
 
 struct isis_area {
 	struct isis *isis;			       /* back pointer */
+	struct trill_info *trill;
 	struct lspdb_head lspdb[ISIS_LEVELS];	       /* link-state dbs */
 	struct isis_spftree *spftree[SPFTREE_COUNT][ISIS_LEVELS];
 #define DEFAULT_LSP_MTU 1497
@@ -268,6 +271,15 @@ DECLARE_QOBJ_TYPE(isis_area);
 DECLARE_MTYPE(ISIS_ACL_NAME);	/* isis_area->spf_prefix_prioritites */
 DECLARE_MTYPE(ISIS_AREA_ADDR);	/* isis_area->area_addrs */
 DECLARE_MTYPE(ISIS_PLIST_NAME);
+DECLARE_MTYPE(ISIS_TRILL_ENABLEDVLANS);
+DECLARE_MTYPE(ISIS_TRILL_VLANFWDERS);
+DECLARE_MTYPE(ISIS_TRILL_VLANSREACHABLE);
+DECLARE_MTYPE(ISIS_TRILL_INHIB);
+DECLARE_MTYPE(ISIS_TRILL_NICKDB_NODE);
+DECLARE_MTYPE(ISIS_TRILL_BRIDGE_ROOTIDS);
+DECLARE_MTYPE(ISIS_TRILL_VLANBRIDGE_ROOTS);
+DECLARE_MTYPE(ISIS_TRILL_FWDTBL_NODE);
+DECLARE_MTYPE(ISIS_TRILL_VLANSUBTLV);
 
 DECLARE_HOOK(isis_area_overload_bit_update, (struct isis_area * area), (area));
 

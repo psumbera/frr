@@ -1323,6 +1323,7 @@ FRR_INCLUDES
 dnl V6 headers are checked below, after we check for v6
 
 is_linux=false
+is_solaris=false
 
 AC_MSG_CHECKING([which operating system interface to use])
 case "$host_os" in
@@ -1331,6 +1332,7 @@ case "$host_os" in
 
     AC_DEFINE([SUNOS_5], [1], [Solaris])
     AC_DEFINE([SOLARIS_IPV6], [1], Solaris IPv6)
+    is_solaris=true
     ;;
   linux*)
     AC_MSG_RESULT([Linux])
@@ -1362,6 +1364,7 @@ case "$host_os" in
     ;;
 esac
 AM_CONDITIONAL([LINUX], [${is_linux}])
+AM_CONDITIONAL([SOLARIS], [${is_solaris}])
 
 AC_SYS_LARGEFILE
 

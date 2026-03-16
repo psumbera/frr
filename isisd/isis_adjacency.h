@@ -59,6 +59,9 @@ struct isis_dis_record {
 
 struct bfd_session;
 struct isis_area;
+#ifdef __sun__
+struct trill_adj_vlans;
+#endif
 
 struct isis_adjacency {
 	uint8_t snpa[ETH_ALEN];		    /* NeighbourSNPAAddress */
@@ -98,6 +101,11 @@ struct isis_adjacency {
 	struct listnode *snmp_list_node;
 
 	struct list *srv6_endx_sids; /* SRv6 End.X SIDs. */
+
+#ifdef __sun__
+	/* TRILL-specific adjacency VLAN state. */
+	struct trill_adj_vlans *vlans;
+#endif
 };
 
 struct isis_threeway_adj;

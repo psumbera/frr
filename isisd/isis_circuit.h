@@ -24,6 +24,9 @@
 DECLARE_HOOK(isis_if_new_hook, (struct interface *ifp), (ifp));
 
 struct isis_lsp;
+#ifdef __sun__
+struct trill_circuit_vlans;
+#endif
 
 struct password {
 	struct password *next;
@@ -176,6 +179,15 @@ struct isis_circuit {
 	uint32_t snmp_adj_idx_gen; /* Create unique id for adjacency on creation
 				    */
 	struct list *snmp_adj_list; /* List in id order */
+
+#ifdef __sun__
+	/* TRILL-specific state (used by Solaris trilld integration). */
+	struct trill_circuit_vlans *vlans;
+	time_t root_expire;
+	uint8_t root_bridge[8];
+	uint8_t tc_count;
+	struct event *tc_thread;
+#endif
 
 	QOBJ_FIELDS;
 };

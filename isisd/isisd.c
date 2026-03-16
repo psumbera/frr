@@ -53,6 +53,7 @@
 #include "isisd/isis_flex_algo.h"
 #include "isisd/fabricd.h"
 #include "isisd/isis_nb.h"
+#include "isisd/isis_trill.h"
 
 /* For debug statement. */
 unsigned long debug_adj_pkt;
@@ -80,6 +81,15 @@ DEFINE_MTYPE_STATIC(ISISD, ISIS_AREA, "ISIS area");
 DEFINE_MTYPE(ISISD, ISIS_AREA_ADDR,   "ISIS area address");
 DEFINE_MTYPE(ISISD, ISIS_ACL_NAME,    "ISIS access-list name");
 DEFINE_MTYPE(ISISD, ISIS_PLIST_NAME, "ISIS prefix-list name");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_ENABLEDVLANS, "ISIS TRILL enabled VLANs");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_VLANFWDERS, "ISIS TRILL VLAN forwarders");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_VLANSREACHABLE, "ISIS TRILL VLANs reachable");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_INHIB, "ISIS TRILL inhibited VLAN");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_NICKDB_NODE, "ISIS TRILL nickname DB node");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_BRIDGE_ROOTIDS, "ISIS TRILL bridge root IDs");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_VLANBRIDGE_ROOTS, "ISIS TRILL VLAN bridge roots");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_FWDTBL_NODE, "ISIS TRILL forwarding table node");
+DEFINE_MTYPE(ISISD, ISIS_TRILL_VLANSUBTLV, "ISIS TRILL VLAN sub-TLV");
 
 DEFINE_QOBJ_TYPE(isis_area);
 
@@ -324,6 +334,7 @@ struct isis_area *isis_area_create(const char *area_tag, const char *vrf_name)
 
 	listnode_add(isis->area_list, area);
 	area->isis = isis;
+	area->trill = XCALLOC(MTYPE_ISIS_AREA, sizeof(*area->trill));
 
 	/*
 	 * Fabricd runs only as level-2.
@@ -550,6 +561,8 @@ void isis_area_destroy(struct isis_area *area)
 	if (fabricd)
 		fabricd_finish(area->fabricd);
 
+	trill_area_free(area);
+
 	if (area->circuit_list) {
 		for (ALL_LIST_ELEMENTS(area->circuit_list, node, nnode,
 				       circuit))
@@ -631,6 +644,8 @@ void isis_area_destroy(struct isis_area *area)
 		XFREE(MTYPE_ISIS_PLIST_NAME, area->rlfa_plist_name[0]);
 	if (area->rlfa_plist_name[1])
 		XFREE(MTYPE_ISIS_PLIST_NAME, area->rlfa_plist_name[1]);
+
+	XFREE(MTYPE_ISIS_AREA, area->trill);
 
 	XFREE(MTYPE_ISIS_AREA, area);
 
