@@ -1,0 +1,812 @@
+true
+gmake  all-am
+gmake[1]: Entering directory '/builds/psumbera/userland-frr/components/frr/solaris-trilld2'
+  CC       vtysh/vtysh_cmd.o
+In file included from vtysh/vtysh_cmd.c:4:
+vtysh/vtysh_cmd.c:731:36: error: redefinition of 'area_lsp_mtu_cmd_vtysh'
+  731 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, area_lsp_mtu_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:731:1: note: in expansion of macro 'DEFSH'
+  731 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, area_lsp_mtu_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:726:21: note: previous definition of 'area_lsp_mtu_cmd_vtysh' with type 'const struct cmd_element'
+  726 | DEFSH (VTYSH_ISISD, area_lsp_mtu_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:726:1: note: in expansion of macro 'DEFSH'
+  726 | DEFSH (VTYSH_ISISD, area_lsp_mtu_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:731:22: error: 'VTYSH_TRILLD' undeclared here (not in a function); did you mean 'VTYSH_RIPD'?
+  731 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, area_lsp_mtu_cmd_vtysh,
+      |                      ^~~~~~~~~~~~
+./lib/command.h:261:27: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  261 |                 .daemon = dnum,                                                \
+      |                           ^~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:731:1: note: in expansion of macro 'DEFSH'
+  731 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, area_lsp_mtu_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:764:36: error: redefinition of 'area_purge_originator_cmd_vtysh'
+  764 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, area_purge_originator_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:764:1: note: in expansion of macro 'DEFSH'
+  764 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, area_purge_originator_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:759:21: note: previous definition of 'area_purge_originator_cmd_vtysh' with type 'const struct cmd_element'
+  759 | DEFSH (VTYSH_ISISD, area_purge_originator_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:759:1: note: in expansion of macro 'DEFSH'
+  759 | DEFSH (VTYSH_ISISD, area_purge_originator_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:2746:36: error: redefinition of 'circuit_topology_cmd_vtysh'
+ 2746 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, circuit_topology_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:2746:1: note: in expansion of macro 'DEFSH'
+ 2746 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, circuit_topology_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:2732:21: note: previous definition of 'circuit_topology_cmd_vtysh' with type 'const struct cmd_element'
+ 2732 | DEFSH (VTYSH_ISISD, circuit_topology_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:2732:1: note: in expansion of macro 'DEFSH'
+ 2732 | DEFSH (VTYSH_ISISD, circuit_topology_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:3667:36: error: redefinition of 'csnp_interval_cmd_vtysh'
+ 3667 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, csnp_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:3667:1: note: in expansion of macro 'DEFSH'
+ 3667 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, csnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:3659:21: note: previous definition of 'csnp_interval_cmd_vtysh' with type 'const struct cmd_element'
+ 3659 | DEFSH (VTYSH_ISISD, csnp_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:3659:1: note: in expansion of macro 'DEFSH'
+ 3659 | DEFSH (VTYSH_ISISD, csnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:5038:36: error: redefinition of 'domain_passwd_cmd_vtysh'
+ 5038 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, domain_passwd_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:5038:1: note: in expansion of macro 'DEFSH'
+ 5038 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, domain_passwd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:5027:21: note: previous definition of 'domain_passwd_cmd_vtysh' with type 'const struct cmd_element'
+ 5027 | DEFSH (VTYSH_ISISD, domain_passwd_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:5027:1: note: in expansion of macro 'DEFSH'
+ 5027 | DEFSH (VTYSH_ISISD, domain_passwd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:6243:36: error: redefinition of 'ip6_router_isis_cmd_vtysh'
+ 6243 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, ip6_router_isis_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:6243:1: note: in expansion of macro 'DEFSH'
+ 6243 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, ip6_router_isis_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:6236:21: note: previous definition of 'ip6_router_isis_cmd_vtysh' with type 'const struct cmd_element'
+ 6236 | DEFSH (VTYSH_ISISD, ip6_router_isis_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:6236:1: note: in expansion of macro 'DEFSH'
+ 6236 | DEFSH (VTYSH_ISISD, ip6_router_isis_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7038:36: error: redefinition of 'ip_router_isis_cmd_vtysh'
+ 7038 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, ip_router_isis_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7038:1: note: in expansion of macro 'DEFSH'
+ 7038 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, ip_router_isis_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7031:21: note: previous definition of 'ip_router_isis_cmd_vtysh' with type 'const struct cmd_element'
+ 7031 | DEFSH (VTYSH_ISISD, ip_router_isis_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7031:1: note: in expansion of macro 'DEFSH'
+ 7031 | DEFSH (VTYSH_ISISD, ip_router_isis_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7789:36: error: redefinition of 'isis_bfd_cmd_vtysh'
+ 7789 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_bfd_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7789:1: note: in expansion of macro 'DEFSH'
+ 7789 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_bfd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7783:21: note: previous definition of 'isis_bfd_cmd_vtysh' with type 'const struct cmd_element'
+ 7783 | DEFSH (VTYSH_ISISD, isis_bfd_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7783:1: note: in expansion of macro 'DEFSH'
+ 7783 | DEFSH (VTYSH_ISISD, isis_bfd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7876:36: error: redefinition of 'isis_hello_interval_cmd_vtysh'
+ 7876 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_hello_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7876:1: note: in expansion of macro 'DEFSH'
+ 7876 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_hello_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7868:21: note: previous definition of 'isis_hello_interval_cmd_vtysh' with type 'const struct cmd_element'
+ 7868 | DEFSH (VTYSH_ISISD, isis_hello_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7868:1: note: in expansion of macro 'DEFSH'
+ 7868 | DEFSH (VTYSH_ISISD, isis_hello_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7890:36: error: redefinition of 'isis_hello_multiplier_cmd_vtysh'
+ 7890 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_hello_multiplier_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7890:1: note: in expansion of macro 'DEFSH'
+ 7890 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_hello_multiplier_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7882:21: note: previous definition of 'isis_hello_multiplier_cmd_vtysh' with type 'const struct cmd_element'
+ 7882 | DEFSH (VTYSH_ISISD, isis_hello_multiplier_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7882:1: note: in expansion of macro 'DEFSH'
+ 7882 | DEFSH (VTYSH_ISISD, isis_hello_multiplier_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7933:36: error: redefinition of 'isis_metric_cmd_vtysh'
+ 7933 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_metric_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7933:1: note: in expansion of macro 'DEFSH'
+ 7933 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_metric_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:7925:21: note: previous definition of 'isis_metric_cmd_vtysh' with type 'const struct cmd_element'
+ 7925 | DEFSH (VTYSH_ISISD, isis_metric_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:7925:1: note: in expansion of macro 'DEFSH'
+ 7925 | DEFSH (VTYSH_ISISD, isis_metric_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8011:36: error: redefinition of 'isis_passive_cmd_vtysh'
+ 8011 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_passive_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8011:1: note: in expansion of macro 'DEFSH'
+ 8011 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_passive_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8005:21: note: previous definition of 'isis_passive_cmd_vtysh' with type 'const struct cmd_element'
+ 8005 | DEFSH (VTYSH_ISISD, isis_passive_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8005:1: note: in expansion of macro 'DEFSH'
+ 8005 | DEFSH (VTYSH_ISISD, isis_passive_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8024:36: error: redefinition of 'isis_passwd_cmd_vtysh'
+ 8024 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_passwd_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8024:1: note: in expansion of macro 'DEFSH'
+ 8024 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, isis_passwd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8016:21: note: previous definition of 'isis_passwd_cmd_vtysh' with type 'const struct cmd_element'
+ 8016 | DEFSH (VTYSH_ISISD, isis_passwd_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8016:1: note: in expansion of macro 'DEFSH'
+ 8016 | DEFSH (VTYSH_ISISD, isis_passwd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8818:36: error: redefinition of 'lsp_gen_interval_cmd_vtysh'
+ 8818 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, lsp_gen_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8818:1: note: in expansion of macro 'DEFSH'
+ 8818 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, lsp_gen_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8811:21: note: previous definition of 'lsp_gen_interval_cmd_vtysh' with type 'const struct cmd_element'
+ 8811 | DEFSH (VTYSH_ISISD, lsp_gen_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8811:1: note: in expansion of macro 'DEFSH'
+ 8811 | DEFSH (VTYSH_ISISD, lsp_gen_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8830:36: error: redefinition of 'lsp_refresh_interval_cmd_vtysh'
+ 8830 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, lsp_refresh_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8830:1: note: in expansion of macro 'DEFSH'
+ 8830 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, lsp_refresh_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:8823:21: note: previous definition of 'lsp_refresh_interval_cmd_vtysh' with type 'const struct cmd_element'
+ 8823 | DEFSH (VTYSH_ISISD, lsp_refresh_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:8823:1: note: in expansion of macro 'DEFSH'
+ 8823 | DEFSH (VTYSH_ISISD, lsp_refresh_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:9228:36: error: redefinition of 'max_lsp_lifetime_cmd_vtysh'
+ 9228 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, max_lsp_lifetime_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:9228:1: note: in expansion of macro 'DEFSH'
+ 9228 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, max_lsp_lifetime_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:9221:21: note: previous definition of 'max_lsp_lifetime_cmd_vtysh' with type 'const struct cmd_element'
+ 9221 | DEFSH (VTYSH_ISISD, max_lsp_lifetime_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:9221:1: note: in expansion of macro 'DEFSH'
+ 9221 | DEFSH (VTYSH_ISISD, max_lsp_lifetime_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:10974:36: error: redefinition of 'no_area_lsp_mtu_cmd_vtysh'
+10974 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_area_lsp_mtu_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:10974:1: note: in expansion of macro 'DEFSH'
+10974 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_area_lsp_mtu_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:10968:21: note: previous definition of 'no_area_lsp_mtu_cmd_vtysh' with type 'const struct cmd_element'
+10968 | DEFSH (VTYSH_ISISD, no_area_lsp_mtu_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:10968:1: note: in expansion of macro 'DEFSH'
+10968 | DEFSH (VTYSH_ISISD, no_area_lsp_mtu_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:12130:36: error: redefinition of 'no_csnp_interval_cmd_vtysh'
+12130 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_csnp_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:12130:1: note: in expansion of macro 'DEFSH'
+12130 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_csnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:12121:21: note: previous definition of 'no_csnp_interval_cmd_vtysh' with type 'const struct cmd_element'
+12121 | DEFSH (VTYSH_ISISD, no_csnp_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:12121:1: note: in expansion of macro 'DEFSH'
+12121 | DEFSH (VTYSH_ISISD, no_csnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:13702:36: error: redefinition of 'no_ip_router_isis_cmd_vtysh'
+13702 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_ip_router_isis_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:13702:1: note: in expansion of macro 'DEFSH'
+13702 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_ip_router_isis_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:13693:21: note: previous definition of 'no_ip_router_isis_cmd_vtysh' with type 'const struct cmd_element'
+13693 | DEFSH (VTYSH_ISISD, no_ip_router_isis_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:13693:1: note: in expansion of macro 'DEFSH'
+13693 | DEFSH (VTYSH_ISISD, no_ip_router_isis_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14051:36: error: redefinition of 'no_isis_hello_interval_cmd_vtysh'
+14051 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_hello_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14051:1: note: in expansion of macro 'DEFSH'
+14051 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_hello_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14042:21: note: previous definition of 'no_isis_hello_interval_cmd_vtysh' with type 'const struct cmd_element'
+14042 | DEFSH (VTYSH_ISISD, no_isis_hello_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14042:1: note: in expansion of macro 'DEFSH'
+14042 | DEFSH (VTYSH_ISISD, no_isis_hello_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14067:36: error: redefinition of 'no_isis_hello_multiplier_cmd_vtysh'
+14067 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_hello_multiplier_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14067:1: note: in expansion of macro 'DEFSH'
+14067 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_hello_multiplier_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14058:21: note: previous definition of 'no_isis_hello_multiplier_cmd_vtysh' with type 'const struct cmd_element'
+14058 | DEFSH (VTYSH_ISISD, no_isis_hello_multiplier_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14058:1: note: in expansion of macro 'DEFSH'
+14058 | DEFSH (VTYSH_ISISD, no_isis_hello_multiplier_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14083:36: error: redefinition of 'no_isis_metric_cmd_vtysh'
+14083 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_metric_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14083:1: note: in expansion of macro 'DEFSH'
+14083 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_metric_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14074:21: note: previous definition of 'no_isis_metric_cmd_vtysh' with type 'const struct cmd_element'
+14074 | DEFSH (VTYSH_ISISD, no_isis_metric_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14074:1: note: in expansion of macro 'DEFSH'
+14074 | DEFSH (VTYSH_ISISD, no_isis_metric_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14155:36: error: redefinition of 'no_isis_passwd_cmd_vtysh'
+14155 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_passwd_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14155:1: note: in expansion of macro 'DEFSH'
+14155 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_isis_passwd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14146:21: note: previous definition of 'no_isis_passwd_cmd_vtysh' with type 'const struct cmd_element'
+14146 | DEFSH (VTYSH_ISISD, no_isis_passwd_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14146:1: note: in expansion of macro 'DEFSH'
+14146 | DEFSH (VTYSH_ISISD, no_isis_passwd_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14311:36: error: redefinition of 'no_lsp_gen_interval_cmd_vtysh'
+14311 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_lsp_gen_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14311:1: note: in expansion of macro 'DEFSH'
+14311 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_lsp_gen_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14303:21: note: previous definition of 'no_lsp_gen_interval_cmd_vtysh' with type 'const struct cmd_element'
+14303 | DEFSH (VTYSH_ISISD, no_lsp_gen_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14303:1: note: in expansion of macro 'DEFSH'
+14303 | DEFSH (VTYSH_ISISD, no_lsp_gen_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14325:36: error: redefinition of 'no_lsp_refresh_interval_cmd_vtysh'
+14325 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_lsp_refresh_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14325:1: note: in expansion of macro 'DEFSH'
+14325 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_lsp_refresh_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14317:21: note: previous definition of 'no_lsp_refresh_interval_cmd_vtysh' with type 'const struct cmd_element'
+14317 | DEFSH (VTYSH_ISISD, no_lsp_refresh_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14317:1: note: in expansion of macro 'DEFSH'
+14317 | DEFSH (VTYSH_ISISD, no_lsp_refresh_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14745:36: error: redefinition of 'no_max_lsp_lifetime_cmd_vtysh'
+14745 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_max_lsp_lifetime_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14745:1: note: in expansion of macro 'DEFSH'
+14745 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_max_lsp_lifetime_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:14737:21: note: previous definition of 'no_max_lsp_lifetime_cmd_vtysh' with type 'const struct cmd_element'
+14737 | DEFSH (VTYSH_ISISD, no_max_lsp_lifetime_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:14737:1: note: in expansion of macro 'DEFSH'
+14737 | DEFSH (VTYSH_ISISD, no_max_lsp_lifetime_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:16905:36: error: redefinition of 'no_psnp_interval_cmd_vtysh'
+16905 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_psnp_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:16905:1: note: in expansion of macro 'DEFSH'
+16905 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_psnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:16896:21: note: previous definition of 'no_psnp_interval_cmd_vtysh' with type 'const struct cmd_element'
+16896 | DEFSH (VTYSH_ISISD, no_psnp_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:16896:1: note: in expansion of macro 'DEFSH'
+16896 | DEFSH (VTYSH_ISISD, no_psnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:17662:36: error: redefinition of 'no_spf_delay_ietf_cmd_vtysh'
+17662 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_spf_delay_ietf_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:17662:1: note: in expansion of macro 'DEFSH'
+17662 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_spf_delay_ietf_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:17647:21: note: previous definition of 'no_spf_delay_ietf_cmd_vtysh' with type 'const struct cmd_element'
+17647 | DEFSH (VTYSH_ISISD, no_spf_delay_ietf_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:17647:1: note: in expansion of macro 'DEFSH'
+17647 | DEFSH (VTYSH_ISISD, no_spf_delay_ietf_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:17675:36: error: redefinition of 'no_spf_interval_cmd_vtysh'
+17675 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_spf_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:17675:1: note: in expansion of macro 'DEFSH'
+17675 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, no_spf_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:17667:21: note: previous definition of 'no_spf_interval_cmd_vtysh' with type 'const struct cmd_element'
+17667 | DEFSH (VTYSH_ISISD, no_spf_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:17667:1: note: in expansion of macro 'DEFSH'
+17667 | DEFSH (VTYSH_ISISD, no_spf_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:19461:36: error: redefinition of 'psnp_interval_cmd_vtysh'
+19461 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, psnp_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:19461:1: note: in expansion of macro 'DEFSH'
+19461 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, psnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:19453:21: note: previous definition of 'psnp_interval_cmd_vtysh' with type 'const struct cmd_element'
+19453 | DEFSH (VTYSH_ISISD, psnp_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:19453:1: note: in expansion of macro 'DEFSH'
+19453 | DEFSH (VTYSH_ISISD, psnp_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:20363:36: error: redefinition of 'set_overload_bit_cmd_vtysh'
+20363 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, set_overload_bit_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:20363:1: note: in expansion of macro 'DEFSH'
+20363 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, set_overload_bit_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:20358:21: note: previous definition of 'set_overload_bit_cmd_vtysh' with type 'const struct cmd_element'
+20358 | DEFSH (VTYSH_ISISD, set_overload_bit_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:20358:1: note: in expansion of macro 'DEFSH'
+20358 | DEFSH (VTYSH_ISISD, set_overload_bit_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:25252:36: error: redefinition of 'spf_delay_ietf_cmd_vtysh'
+25252 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, spf_delay_ietf_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:25252:1: note: in expansion of macro 'DEFSH'
+25252 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, spf_delay_ietf_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:25238:21: note: previous definition of 'spf_delay_ietf_cmd_vtysh' with type 'const struct cmd_element'
+25238 | DEFSH (VTYSH_ISISD, spf_delay_ietf_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:25238:1: note: in expansion of macro 'DEFSH'
+25238 | DEFSH (VTYSH_ISISD, spf_delay_ietf_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:25273:36: error: redefinition of 'spf_interval_cmd_vtysh'
+25273 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, spf_interval_cmd_vtysh,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:25273:1: note: in expansion of macro 'DEFSH'
+25273 | DEFSH (VTYSH_FABRICD|VTYSH_TRILLD, spf_interval_cmd_vtysh,
+      | ^~~~~
+vtysh/vtysh_cmd.c:25266:21: note: previous definition of 'spf_interval_cmd_vtysh' with type 'const struct cmd_element'
+25266 | DEFSH (VTYSH_ISISD, spf_interval_cmd_vtysh,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+./lib/command.h:256:34: note: in definition of macro 'DEFUN_CMD_ELEMENT'
+  256 |         const struct cmd_element cmdname = {                                   \
+      |                                  ^~~~~~~
+./lib/command.h:339:9: note: in expansion of macro 'DEFSH_ATTR'
+  339 |         DEFSH_ATTR(daemon, cmdname, cmdstr, helpstr, 0)
+      |         ^~~~~~~~~~
+vtysh/vtysh_cmd.c:25266:1: note: in expansion of macro 'DEFSH'
+25266 | DEFSH (VTYSH_ISISD, spf_interval_cmd_vtysh,
+      | ^~~~~
+gmake[1]: *** [Makefile:11084: vtysh/vtysh_cmd.o] Error 1
+gmake[1]: Leaving directory '/builds/psumbera/userland-frr/components/frr/solaris-trilld2'
+gmake: *** [Makefile:6760: all] Error 2
